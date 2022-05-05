@@ -12,6 +12,16 @@ const PORT = process.env.PORT || 3001;
 // Handlebars custom helpers
 const hbs = exphbs.create({ helpers });
 
+const sess = {
+    secret: 'Super secret secret',
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+    })
+};
+
 // select which express.js template engine to use.
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
