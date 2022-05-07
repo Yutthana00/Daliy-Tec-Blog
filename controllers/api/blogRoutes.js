@@ -36,4 +36,4 @@ router.delete('/:id', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
-module.exports = rotuer; 
+module.exports = router; 
