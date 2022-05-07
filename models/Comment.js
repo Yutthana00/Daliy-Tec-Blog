@@ -47,4 +47,4 @@ Comment.init (
     }
 );
 
-model.expoers = Comment;
+module.exports = Comment;
