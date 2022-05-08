@@ -4,4 +4,4 @@ module.exports = {
     }
 };
 
-// Date formated
+// Date format
