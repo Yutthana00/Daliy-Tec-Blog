@@ -41,7 +41,7 @@ router.get('blog/:id', async (req, res) => {
             ],
         });
 
-        const blog = blofData.get({
+        const blog = blogData.get({
             plain: true
         });
 
