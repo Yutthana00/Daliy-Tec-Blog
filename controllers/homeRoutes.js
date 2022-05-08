@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
         const blogData = await Blog.findAll({
             include: [{
                 model: User,
-                attrbutes: ['username'],
+                attributes: ['username'],
             },],
         });
 
@@ -31,7 +31,7 @@ router.get('blog/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attrbutes: ['username'],
+                    attributes: ['username'],
                 }, {
                     model: Comment,
                     include: [
@@ -57,7 +57,7 @@ router.get('blog/:id', async (req, res) => {
 router.get('/dashboard', withAuth, async (req,res) => {
     try {
         const userData = await User.findByPK(req.session.user_id, {
-            attrbutes: {
+            attributes: {
                 exclude: ['password']
             },
             include: [{
