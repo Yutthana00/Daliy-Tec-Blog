@@ -3,6 +3,7 @@ require('dotenv').config();
 
 
 let sequelize;
+// JAWSDB allows local SQL database available in the cloud
 
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
@@ -16,7 +17,7 @@ if (process.env.JAWSDB_URL) {
       dialect: 'mysql',
       port: 3306
     }
-    );
-  }
+  );
+}
 
 module.exports = sequelize;
