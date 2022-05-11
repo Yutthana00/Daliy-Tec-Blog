@@ -1,28 +1,35 @@
+// Node modules
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+
+// Router
 const routes = require('./controllers');
+
+// Helper function
 const helpers = require('./utils/helpers');
 
+// sequelize function 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-// localHost port connection 3001
+// localHost port 3001
 const app = express(); 
 const PORT = process.env.PORT || 3001;
 
 // Handlebars custom helpers
 const hbs = exphbs.create({ helpers });
 
+// use session object
 const sess = {
-    secret: 'Super secret secret',
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-        db: sequelize
-    })
+  secret: 'Super secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  })
 };
 
 app.use(session(sess));
