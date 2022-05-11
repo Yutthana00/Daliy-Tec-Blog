@@ -52,7 +52,7 @@
     THEN I am signed out of the site ✅
 
 ## GitHub: https://github.com/Yutthana00/Daliy-Tec-Blog
-## Deployed: https://yutthana00.github.io/Daliy-Tec-Blog/
+
 
 
 ## Technologies Used
