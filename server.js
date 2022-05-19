@@ -23,7 +23,7 @@ const hbs = exphbs.create({ helpers });
 
 // use session object
 const sess = {
-  secret: 'Super secret',
+  secret: 'Super secret secret',
   cookie: {},
   resave: false,
   saveUninitialized: true,
