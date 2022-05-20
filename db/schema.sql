@@ -4,3 +4,5 @@ DROP DATABASE IF EXISTS DaliyTechBlog_db;
 -- CREATE DATABASE
 CREATE DATABASE DaliyTechBlog_db;
 
+USE DaliyTechBlog_db;
+
