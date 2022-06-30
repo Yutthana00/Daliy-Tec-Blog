@@ -5,7 +5,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 
 // Router
-const routes = require('./controllers');
+const router = require('./controllers');
 
 // Helper function
 const helpers = require('./utils/helpers');
@@ -42,7 +42,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(routes);
+app.use(router);
 
 app.listen(PORT, () => {
   console.log(`Now listening ${PORT}!`);
