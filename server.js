@@ -18,6 +18,10 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const PORT = process.env.PORT || 4000;
 const app = express(); 
 
+const store = new SequelizeStore({
+  db: sequelize,
+});
+
 // Handlebars custom helpers
 const hbs = exphbs.create({ helpers });
 
@@ -27,9 +31,7 @@ const sess = {
   cookie: {},
   resave: false,
   saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize,
-  })
+  
 };
 
 app.use(session(sess));
